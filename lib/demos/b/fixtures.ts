@@ -1,0 +1,368 @@
+import type { Locale } from "@/lib/routes";
+import type { BusinessFixture } from "./types";
+
+/**
+ * Negocios ficticios de demonstracao. Nomes inventados, sem relacao com
+ * marcas reais. Avaliacoes tambem ficticias — tudo marcado como
+ * demonstracao na interface.
+ */
+export const AUDIT_FIXTURES: Record<Locale, BusinessFixture[]> = {
+  pt: [
+    {
+      id: "padaria",
+      locale: "pt",
+      name: "Padaria Trigo Dourado",
+      kind: "padaria",
+      checks: [
+        { id: "https", passed: false, severityWhenFailed: "alto" },
+        { id: "mobile", passed: true, severityWhenFailed: "medio" },
+        { id: "messageButton", passed: false, severityWhenFailed: "alto" },
+        { id: "map", passed: true, severityWhenFailed: "medio" },
+        { id: "structuredData", passed: false, severityWhenFailed: "baixo" },
+        { id: "reviewLink", passed: false, severityWhenFailed: "medio" },
+      ],
+      reviews: [
+        {
+          id: "r1",
+          author: "Carlos M.",
+          rating: 5,
+          text: "Pão quentinho todo dia e atendimento ótimo. Virei cliente fiel!",
+          respondedByOwner: true,
+        },
+        {
+          id: "r2",
+          author: "Juliana F.",
+          rating: 2,
+          text: "Já fui bem atendida outras vezes, mas dessa vez esperei muito e ninguém me avisou do atraso.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r3",
+          author: "Roberto S.",
+          rating: 4,
+          text: "Bom custo-benefício, só achei o salgado um pouco salgado demais.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r4",
+          author: "Patrícia L.",
+          rating: 5,
+          text: "Melhor padaria do bairro, recomendo o pão de queijo!",
+          respondedByOwner: true,
+        },
+        {
+          id: "r5",
+          author: "Marcos T.",
+          rating: 3,
+          text: "Produto bom, mas o estacionamento é bem complicado.",
+          respondedByOwner: false,
+        },
+      ],
+    },
+    {
+      id: "salao",
+      locale: "pt",
+      name: "Salão Beleza Rara",
+      kind: "salão de beleza",
+      checks: [
+        { id: "https", passed: true, severityWhenFailed: "alto" },
+        { id: "mobile", passed: true, severityWhenFailed: "medio" },
+        { id: "messageButton", passed: true, severityWhenFailed: "alto" },
+        { id: "map", passed: true, severityWhenFailed: "medio" },
+        { id: "structuredData", passed: false, severityWhenFailed: "baixo" },
+        { id: "reviewLink", passed: false, severityWhenFailed: "medio" },
+      ],
+      reviews: [
+        {
+          id: "r1",
+          author: "Fernanda O.",
+          rating: 5,
+          text: "Simplesmente perfeito, saí de lá outra pessoa! Equipe muito atenciosa.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r2",
+          author: "Camila R.",
+          rating: 5,
+          text: "Adorei o resultado da coloração, super recomendo.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r3",
+          author: "Beatriz N.",
+          rating: 4,
+          text: "Gostei bastante, só o preço que achei salgado para o que é.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r4",
+          author: "Aline D.",
+          rating: 3,
+          text: "Atendimento ok, mas demorou bem mais do que o combinado.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r5",
+          author: "Débora K.",
+          rating: 5,
+          text: "Ambiente agradável e profissionais muito competentes.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r6",
+          author: "Larissa P.",
+          rating: 5,
+          text: "Voltarei sempre, atendimento impecável do início ao fim.",
+          respondedByOwner: true,
+        },
+      ],
+    },
+    {
+      id: "academia",
+      locale: "pt",
+      name: "Academia Potência",
+      kind: "academia",
+      checks: [
+        { id: "https", passed: true, severityWhenFailed: "alto" },
+        { id: "mobile", passed: false, severityWhenFailed: "medio" },
+        { id: "messageButton", passed: true, severityWhenFailed: "alto" },
+        { id: "map", passed: false, severityWhenFailed: "alto" },
+        { id: "structuredData", passed: true, severityWhenFailed: "baixo" },
+        { id: "reviewLink", passed: true, severityWhenFailed: "medio" },
+      ],
+      reviews: [
+        {
+          id: "r1",
+          author: "Diego A.",
+          rating: 2,
+          text: "Equipamento bom, mas estava sempre muito cheio no horário que eu ia.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r2",
+          author: "Renata C.",
+          rating: 1,
+          text: "Cancelei e cobraram multa que ninguém tinha me avisado. Não gostei nada.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r3",
+          author: "Felipe B.",
+          rating: 5,
+          text: "Professores excelentes, me ajudaram muito na reabilitação do joelho.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r4",
+          author: "Tatiane M.",
+          rating: 2,
+          text: "Vestiário sempre sujo e chuveiro quebrado há semanas.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r5",
+          author: "Gustavo H.",
+          rating: 4,
+          text: "Boa estrutura, só faltam mais aparelhos de cardio nos horários de pico.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r6",
+          author: "Vanessa R.",
+          rating: 3,
+          text: "Academia razoável, atendimento da recepção podia ser mais atencioso.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r7",
+          author: "Bruno L.",
+          rating: 4,
+          text: "Gosto bastante das aulas em grupo, instrutores bem preparados.",
+          respondedByOwner: true,
+        },
+      ],
+    },
+  ],
+  en: [
+    {
+      id: "padaria",
+      locale: "en",
+      name: "Padaria Trigo Dourado",
+      kind: "bakery",
+      checks: [
+        { id: "https", passed: false, severityWhenFailed: "alto" },
+        { id: "mobile", passed: true, severityWhenFailed: "medio" },
+        { id: "messageButton", passed: false, severityWhenFailed: "alto" },
+        { id: "map", passed: true, severityWhenFailed: "medio" },
+        { id: "structuredData", passed: false, severityWhenFailed: "baixo" },
+        { id: "reviewLink", passed: false, severityWhenFailed: "medio" },
+      ],
+      reviews: [
+        {
+          id: "r1",
+          author: "Carlos M.",
+          rating: 5,
+          text: "Fresh bread every day and great service. I'm a loyal customer now!",
+          respondedByOwner: true,
+        },
+        {
+          id: "r2",
+          author: "Juliana F.",
+          rating: 2,
+          text: "I've been served well before, but this time I waited a long while and nobody mentioned the delay.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r3",
+          author: "Roberto S.",
+          rating: 4,
+          text: "Good value, just found the savory pastry a bit too salty.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r4",
+          author: "Patrícia L.",
+          rating: 5,
+          text: "Best bakery in the neighborhood, try the cheese bread!",
+          respondedByOwner: true,
+        },
+        {
+          id: "r5",
+          author: "Marcos T.",
+          rating: 3,
+          text: "Good product, but parking is quite a hassle.",
+          respondedByOwner: false,
+        },
+      ],
+    },
+    {
+      id: "salao",
+      locale: "en",
+      name: "Salão Beleza Rara",
+      kind: "hair salon",
+      checks: [
+        { id: "https", passed: true, severityWhenFailed: "alto" },
+        { id: "mobile", passed: true, severityWhenFailed: "medio" },
+        { id: "messageButton", passed: true, severityWhenFailed: "alto" },
+        { id: "map", passed: true, severityWhenFailed: "medio" },
+        { id: "structuredData", passed: false, severityWhenFailed: "baixo" },
+        { id: "reviewLink", passed: false, severityWhenFailed: "medio" },
+      ],
+      reviews: [
+        {
+          id: "r1",
+          author: "Fernanda O.",
+          rating: 5,
+          text: "Simply perfect, I left feeling like a new person! Very attentive team.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r2",
+          author: "Camila R.",
+          rating: 5,
+          text: "Loved the coloring result, highly recommend.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r3",
+          author: "Beatriz N.",
+          rating: 4,
+          text: "Really liked it, just found the price a bit steep for what it is.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r4",
+          author: "Aline D.",
+          rating: 3,
+          text: "Service was ok, but took much longer than agreed.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r5",
+          author: "Débora K.",
+          rating: 5,
+          text: "Nice atmosphere and very skilled professionals.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r6",
+          author: "Larissa P.",
+          rating: 5,
+          text: "I'll keep coming back, flawless service from start to finish.",
+          respondedByOwner: true,
+        },
+      ],
+    },
+    {
+      id: "academia",
+      locale: "en",
+      name: "Academia Potência",
+      kind: "gym",
+      checks: [
+        { id: "https", passed: true, severityWhenFailed: "alto" },
+        { id: "mobile", passed: false, severityWhenFailed: "medio" },
+        { id: "messageButton", passed: true, severityWhenFailed: "alto" },
+        { id: "map", passed: false, severityWhenFailed: "alto" },
+        { id: "structuredData", passed: true, severityWhenFailed: "baixo" },
+        { id: "reviewLink", passed: true, severityWhenFailed: "medio" },
+      ],
+      reviews: [
+        {
+          id: "r1",
+          author: "Diego A.",
+          rating: 2,
+          text: "Good equipment, but always very crowded at the time I'd go.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r2",
+          author: "Renata C.",
+          rating: 1,
+          text: "I cancelled and got charged a fee nobody told me about. Did not like this at all.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r3",
+          author: "Felipe B.",
+          rating: 5,
+          text: "Excellent trainers, they really helped with my knee rehab.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r4",
+          author: "Tatiane M.",
+          rating: 2,
+          text: "Locker room is always dirty and the shower has been broken for weeks.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r5",
+          author: "Gustavo H.",
+          rating: 4,
+          text: "Good facility, just needs more cardio machines at peak hours.",
+          respondedByOwner: true,
+        },
+        {
+          id: "r6",
+          author: "Vanessa R.",
+          rating: 3,
+          text: "Decent gym, front desk could be friendlier.",
+          respondedByOwner: false,
+        },
+        {
+          id: "r7",
+          author: "Bruno L.",
+          rating: 4,
+          text: "I really like the group classes, well-prepared instructors.",
+          respondedByOwner: true,
+        },
+      ],
+    },
+  ],
+};
+
+export function getBusiness(locale: Locale, id: string): BusinessFixture {
+  const business = AUDIT_FIXTURES[locale].find((b) => b.id === id);
+  if (!business) throw new Error(`Negocio nao encontrado: ${id}`);
+  return business;
+}

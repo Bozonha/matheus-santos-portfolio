@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/routes";
+import type { CheckId, PlanStep, ReplyVoice, ReviewTone } from "@/lib/demos/b/types";
 
 export interface NavLink {
   label: string;
@@ -157,5 +158,42 @@ export interface Dictionary {
       responseTimeTitle: string;
       responseTimeNote: string;
     };
+  };
+  demoB: {
+    title: string;
+    lede: string;
+    disclaimer: string;
+    businessPickerLabel: string;
+    scoreLabel: string;
+    checksTitle: string;
+    checkLabels: Record<CheckId, string>;
+    checkPassedNote: string;
+    checkFailedNote: string;
+    reputationTitle: string;
+    reputationAverageLabel: string;
+    totalReviewsLabel: string;
+    unansweredReviewsLabel: string;
+    planTitle: string;
+    planStepLabels: Record<PlanStep["checkId"], string>;
+    planStepBodies: Record<PlanStep["checkId"], string>;
+    reviewsListTitle: string;
+    respondedLabel: string;
+    unansweredLabel: string;
+    responderTitle: string;
+    responderLede: string;
+    pasteLabel: string;
+    pastePlaceholder: string;
+    pickExampleLabel: string;
+    useOwnTextLabel: string;
+    voiceLabel: string;
+    voiceOptions: Record<ReplyVoice, string>;
+    generateReplyLabel: string;
+    replyResultTitle: string;
+    justificationTitle: string;
+    toneDetectedLabel: string;
+    toneLabels: Record<ReviewTone, string>;
+    askReviewTitle: string;
+    askReviewLede: string;
+    askReviewGenerateLabel: string;
   };
 }

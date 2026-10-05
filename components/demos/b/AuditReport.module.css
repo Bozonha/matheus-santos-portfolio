@@ -1,0 +1,116 @@
+.checkList {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.statusOk {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-fg-muted);
+}
+
+.statusFail {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-alert);
+}
+
+.reputationStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.stat {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-fg-muted);
+}
+
+.statValue {
+  font-size: var(--text-lg);
+}
+
+.planList {
+  display: grid;
+  gap: var(--space-4);
+  counter-reset: plan;
+}
+
+.planItem {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.planItemTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-md);
+}
+
+.planStepNumber {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+}
+
+.planItemBody {
+  color: var(--color-fg-muted);
+  font-size: var(--text-sm);
+}
+
+.reviewsList {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.reviewCard {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: var(--space-1);
+}
+
+.reviewTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-fg-muted);
+}
+
+.reviewTopResponded {
+  color: var(--color-accent-text, var(--color-accent));
+}
+
+.reviewTopUnanswered {
+  color: var(--color-alert);
+}
+
+.reviewText {
+  font-size: var(--text-sm);
+}

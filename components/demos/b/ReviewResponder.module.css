@@ -1,0 +1,128 @@
+.wrap {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.lede {
+  color: var(--color-fg-muted);
+  font-size: var(--text-sm);
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.exampleChip {
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg-raised);
+  cursor: pointer;
+  max-width: 16rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.exampleChipActive {
+  border-color: var(--color-accent);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.fieldLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.textarea {
+  min-height: 6rem;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  resize: vertical;
+}
+
+.input {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-size: var(--text-sm);
+  max-width: 16rem;
+}
+
+.voiceRow {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.voiceOption {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.voiceOptionActive {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+.generateButton {
+  justify-self: start;
+  padding: var(--space-3) var(--space-6);
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.generateButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.result {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+.resultTone {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent-text, var(--color-accent));
+  text-transform: uppercase;
+}
+
+.resultReply {
+  font-size: var(--text-md);
+}
+
+.resultJustification {
+  font-size: var(--text-sm);
+  color: var(--color-fg-muted);
+}
