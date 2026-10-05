@@ -113,4 +113,49 @@ export interface Dictionary {
     lede: string;
     sections: { title: string; body: string[] }[];
   };
+  demoA: {
+    title: string;
+    lede: string;
+    scenarioPickerLabel: string;
+    afterHoursToggleLabel: string;
+    afterHoursActiveNote: string;
+    inputLabel: string;
+    inputPlaceholder: string;
+    sendLabel: string;
+    quickRepliesLabel: string;
+    chatRegionLabel: string;
+    resetLabel: string;
+    panel: {
+      title: string;
+      logTitle: string;
+      emptyLog: string;
+      intentTitle: string;
+      noIntentYet: string;
+      intentLabels: Record<
+        | "saudacao"
+        | "horario"
+        | "endereco"
+        | "servicos"
+        | "preco"
+        | "agendar"
+        | "remarcar"
+        | "cancelar"
+        | "falar_com_pessoa"
+        | "desconhecido",
+        string
+      >;
+      agendaTitle: string;
+      noBooking: string;
+      bookingStageLabels: Record<
+        "idle" | "need_service" | "need_slot" | "need_name" | "confirmed",
+        string
+      >;
+      handoffTitle: string;
+      noHandoff: string;
+      handoffReasonLabel: string;
+      handoffSummaryLabel: string;
+      responseTimeTitle: string;
+      responseTimeNote: string;
+    };
+  };
 }
