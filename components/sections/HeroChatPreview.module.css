@@ -1,0 +1,116 @@
+.sealRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-2);
+}
+
+.frame {
+  position: relative;
+  max-width: 26rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+  overflow: hidden;
+}
+
+.frameHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-fg-muted);
+}
+
+.clock {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-accent);
+}
+
+.clockIcon {
+  width: 0.9rem;
+  height: 0.9rem;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  min-height: 15rem;
+}
+
+.bubbleRow {
+  display: flex;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: bubble-in var(--motion-slow) var(--ease-standard) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+.fromCliente {
+  justify-content: flex-start;
+}
+
+.fromAtendente {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 85%;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.fromCliente .bubble {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-bottom-left-radius: 2px;
+}
+
+.fromAtendente .bubble {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  border-bottom-right-radius: 2px;
+}
+
+.status {
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-fg-muted);
+  opacity: 0;
+  animation: bubble-in var(--motion-slow) var(--ease-standard) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubbleRow,
+  .status {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}

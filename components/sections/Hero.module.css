@@ -1,0 +1,37 @@
+.wrap {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  max-width: 18ch;
+}
+
+.lede {
+  font-size: var(--text-lg);
+  color: var(--color-fg-muted);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.previewWrap {
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .wrap {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+}

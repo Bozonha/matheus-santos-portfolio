@@ -15,15 +15,15 @@ export function Header({
 }) {
   const nav = dictionary.header.nav;
   const links = [
-    { href: `/${locale}/${pagePaths.solucoes[locale]}/`, label: nav.solucoes },
-    { href: `/${locale}/${pagePaths.demos[locale]}/`, label: nav.demos },
+    { href: `/${locale}/${pagePaths.solucoes}/`, label: nav.solucoes },
+    { href: `/${locale}/${pagePaths.demos}/`, label: nav.demos },
     {
-      href: `/${locale}/${pagePaths.comoEuTrabalho[locale]}/`,
+      href: `/${locale}/${pagePaths.comoEuTrabalho}/`,
       label: nav.comoEuTrabalho,
     },
-    { href: `/${locale}/${pagePaths.sobre[locale]}/`, label: nav.sobre },
-    { href: `/${locale}/${pagePaths.faq[locale]}/`, label: nav.faq },
-    { href: `/${locale}/${pagePaths.contato[locale]}/`, label: nav.contato },
+    { href: `/${locale}/${pagePaths.sobre}/`, label: nav.sobre },
+    { href: `/${locale}/${pagePaths.faq}/`, label: nav.faq },
+    { href: `/${locale}/${pagePaths.contato}/`, label: nav.contato },
   ];
 
   return (

@@ -83,8 +83,13 @@
   }
 }
 
-/* Fases do turno — so dentro de [data-scroll-narrative], ligadas ao scroll da Home. */
-[data-scroll-narrative] [data-phase="noite"] {
+/*
+  Fases do turno — so dentro do container [data-scroll-narrative] da Home.
+  data-phase e atualizado dinamicamente (via usePhaseObserver) no PROPRIO
+  container conforme o scroll; cada <section data-phase-section="..."> serve
+  so de marcador de limite para o hook medir, nao de seletor de cor.
+*/
+[data-scroll-narrative][data-phase="noite"] {
   --color-bg: #0b1220;
   --color-bg-raised: #10192c;
   --color-fg: #e9edf5;
@@ -95,7 +100,7 @@
   color-scheme: dark;
 }
 
-[data-scroll-narrative] [data-phase="madrugada"] {
+[data-scroll-narrative][data-phase="madrugada"] {
   --color-bg: #2b3650;
   --color-bg-raised: #34405e;
   --color-fg: #edeff5;
@@ -106,7 +111,7 @@
   color-scheme: dark;
 }
 
-[data-scroll-narrative] [data-phase="dia"] {
+[data-scroll-narrative][data-phase="dia"] {
   --color-bg: #f2f3f5;
   --color-bg-raised: #ffffff;
   --color-fg: #14181f;

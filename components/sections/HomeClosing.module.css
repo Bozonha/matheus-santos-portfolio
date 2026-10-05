@@ -1,0 +1,17 @@
+.title {
+  font-size: var(--text-2xl);
+  max-width: 22ch;
+  margin-bottom: var(--space-6);
+}
+
+.body {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--max-measure);
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-8);
+}
+
+.body p:first-child {
+  color: var(--color-fg);
+}

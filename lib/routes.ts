@@ -18,15 +18,21 @@ export function matchLocale(navigatorLanguage: string | undefined): Locale {
   return defaultLocale;
 }
 
+/**
+ * Slugs de pagina e de demo sao os mesmos nos dois idiomas (derivados do
+ * portugues, mercado principal) — so o conteudo e o prefixo de locale mudam.
+ * Isso evita precisar de uma camada extra de rota dinamica so para traduzir
+ * segmentos de URL por idioma.
+ */
 export const pagePaths = {
   home: "",
-  solucoes: { pt: "solucoes", en: "solutions" },
-  demos: { pt: "demos", en: "demos" },
-  comoEuTrabalho: { pt: "como-eu-trabalho", en: "how-i-work" },
-  sobre: { pt: "sobre", en: "about" },
-  faq: { pt: "faq", en: "faq" },
-  contato: { pt: "contato", en: "contact" },
-  privacidade: { pt: "privacidade", en: "privacy" },
+  solucoes: "solucoes",
+  demos: "demos",
+  comoEuTrabalho: "como-eu-trabalho",
+  sobre: "sobre",
+  faq: "faq",
+  contato: "contato",
+  privacidade: "privacidade",
 } as const;
 
 export function localePath(locale: Locale, segment: string): string {
@@ -34,53 +40,25 @@ export function localePath(locale: Locale, segment: string): string {
 }
 
 export const demoSlugs = {
-  a: { pt: "atendente", en: "assistant" },
-  b: { pt: "auditoria", en: "audit" },
-  c: { pt: "painel", en: "dashboard" },
-  d: { pt: "automacao", en: "automation" },
+  a: "atendente",
+  b: "auditoria",
+  c: "painel",
+  d: "automacao",
 } as const;
 
 export type DemoKey = keyof typeof demoSlugs;
 
 export function demoPath(locale: Locale, demo: DemoKey): string {
-  return `/${locale}/${pagePaths.demos[locale]}/${demoSlugs[demo][locale]}/`;
+  return `/${locale}/${pagePaths.demos}/${demoSlugs[demo]}/`;
 }
 
-type SlugKey = Exclude<keyof typeof pagePaths, "home">;
-
-const pageSlugEntries = Object.entries(pagePaths).filter(
-  ([key]) => key !== "home",
-) as [SlugKey, { pt: string; en: string }][];
-
 /**
- * Traduz um caminho de um idioma para outro, trocando slugs conhecidos
- * (paginas e demos) em vez de so trocar o prefixo de locale. Usado pelo
- * LocaleSwitcher para nao jogar o visitante sempre na home ao trocar idioma.
+ * Traduz um caminho trocando so o prefixo de locale — os slugs sao
+ * compartilhados entre os idiomas, entao o resto do caminho nao muda.
+ * Usado pelo LocaleSwitcher para nao jogar o visitante sempre na home.
  */
 export function translatePath(pathname: string, toLocale: Locale): string {
   const segments = pathname.split("/").filter(Boolean);
-  const [, first, second] = segments;
-
-  if (!first) return `/${toLocale}/`;
-
-  const page = pageSlugEntries.find(([, slugs]) =>
-    locales.some((l) => slugs[l] === first),
-  );
-
-  if (!page) return `/${toLocale}/`;
-
-  const [pageKey, pageSlugs] = page;
-  const translatedPage = pageSlugs[toLocale];
-
-  if (pageKey === "demos" && second) {
-    const demoEntry = (Object.entries(demoSlugs) as [DemoKey, { pt: string; en: string }][]).find(
-      ([, slugs]) => locales.some((l) => slugs[l] === second),
-    );
-    if (demoEntry) {
-      const [, demoLocaleSlugs] = demoEntry;
-      return `/${toLocale}/${translatedPage}/${demoLocaleSlugs[toLocale]}/`;
-    }
-  }
-
-  return `/${toLocale}/${translatedPage}/`;
+  const [, ...rest] = segments;
+  return rest.length ? `/${toLocale}/${rest.join("/")}/` : `/${toLocale}/`;
 }

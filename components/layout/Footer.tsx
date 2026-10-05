@@ -23,7 +23,7 @@ export function Footer({
           {footer.contactLabel}:{" "}
           <a href={`mailto:${footer.contactEmail}`}>{footer.contactEmail}</a>
         </span>
-        <Link href={`/${locale}/${pagePaths.privacidade[locale]}/`}>
+        <Link href={`/${locale}/${pagePaths.privacidade}/`}>
           {footer.privacyLink}
         </Link>
         <span>

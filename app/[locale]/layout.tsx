@@ -6,6 +6,8 @@ import { getDictionary } from "@/content/dictionaries";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { PersonJsonLd } from "@/components/seo/PersonJsonLd";
+import { ProfessionalServiceJsonLd } from "@/components/seo/ProfessionalServiceJsonLd";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -104,6 +106,8 @@ export default async function LocaleLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <PersonJsonLd locale={locale} dictionary={dictionary} />
+        <ProfessionalServiceJsonLd locale={locale} dictionary={dictionary} />
       </head>
       <body>
         <SkipLink label={dictionary.skipLink} />
