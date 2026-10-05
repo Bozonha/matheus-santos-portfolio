@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/routes";
 import type { CheckId, PlanStep, ReplyVoice, ReviewTone } from "@/lib/demos/b/types";
+import type { StepStatus } from "@/lib/demos/d/types";
 
 export interface NavLink {
   label: string;
@@ -236,5 +237,27 @@ export interface Dictionary {
     };
     tableDetailHint: string;
     exportCsvLabel: string;
+  };
+  demoD: {
+    title: string;
+    lede: string;
+    disclaimer: string;
+    executeLabel: string;
+    pauseLabel: string;
+    resumeLabel: string;
+    injectErrorLabel: string;
+    resetLabel: string;
+    elapsedLabel: string;
+    statusLabels: Record<StepStatus, string>;
+    logPanelTitle: string;
+    logEmpty: string;
+    emailPreviewTitle: string;
+    emailPending: string;
+    emailSubject: string;
+    emailGreeting: string;
+    emailBodyIntro: string;
+    emailClosing: string;
+    codeTabTitle: string;
+    codeTabLede: string;
   };
 }

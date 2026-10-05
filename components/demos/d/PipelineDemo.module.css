@@ -1,0 +1,234 @@
+.layout {
+  display: grid;
+  gap: var(--space-10);
+  padding: 0 var(--space-6) var(--space-24);
+  max-width: 76rem;
+  margin: 0 auto;
+}
+
+.disclaimer {
+  padding: var(--space-3) var(--space-4);
+  border-left: 2px solid var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-fg-muted);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.button {
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.buttonPrimary {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  border-color: transparent;
+}
+
+.buttonDanger {
+  border-color: var(--color-alert);
+  color: var(--color-alert);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.elapsed {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-fg-muted);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.tab {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.tabActive {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+.stepsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.step {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-2);
+  text-align: center;
+}
+
+.stepPending {
+  opacity: 0.5;
+}
+
+.stepRunning {
+  border-color: var(--color-accent);
+}
+
+.stepSuccess {
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+
+.stepError {
+  border-color: var(--color-alert);
+  background: color-mix(in srgb, var(--color-alert) 10%, transparent);
+}
+
+.stepRetrying {
+  border-color: var(--color-alert);
+  border-style: dashed;
+}
+
+.stepLabel {
+  font-size: var(--text-sm);
+}
+
+.stepStatus {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-fg-muted);
+}
+
+.stepProgress {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.twoCol {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.section {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.sectionTitle {
+  font-size: var(--text-lg);
+}
+
+.logList {
+  height: 16rem;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  display: grid;
+  gap: var(--space-1);
+  align-content: start;
+  background: var(--color-bg-raised);
+}
+
+.logEntry {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.logTime {
+  color: var(--color-fg-muted);
+  flex-shrink: 0;
+}
+
+.logInfo {
+  color: var(--color-fg);
+}
+
+.logWarn {
+  color: var(--color-accent-text, var(--color-accent));
+}
+
+.logError {
+  color: var(--color-alert);
+}
+
+.emailCard {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.emailHeader {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-raised);
+  font-size: var(--text-sm);
+  display: grid;
+  gap: var(--space-1);
+}
+
+.emailBody {
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.emailPending {
+  padding: var(--space-4);
+  color: var(--color-fg-muted);
+  font-size: var(--text-sm);
+}
+
+.codeBox {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  background: var(--color-bg-raised);
+}
+
+.codePre {
+  margin: 0;
+  padding: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+@media (min-width: 900px) {
+  .twoCol {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .stepsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
