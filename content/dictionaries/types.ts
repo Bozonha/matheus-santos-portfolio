@@ -196,4 +196,45 @@ export interface Dictionary {
     askReviewLede: string;
     askReviewGenerateLabel: string;
   };
+  demoC: {
+    title: string;
+    lede: string;
+    disclaimer: string;
+    periodLabel: string;
+    periodPresets: { label: string; months: number }[];
+    comparisonPrefix: string;
+    comparisonSuffixUp: string;
+    comparisonSuffixDown: string;
+    comparisonNoPrevious: string;
+    statCards: {
+      revenue: string;
+      cashFlow: string;
+      defaultRate: string;
+      averageTicket: string;
+    };
+    revenueChartTitle: string;
+    revenueChartDescription: string;
+    forecastToggleLabel: string;
+    forecastLegend: string;
+    forecastNote: string;
+    anomalyTitle: string;
+    anomalyNone: string;
+    anomalyAbove: string;
+    anomalyBelow: string;
+    servicesTitle: string;
+    servicesHeaders: { service: string; revenue: string; share: string };
+    tableTitle: string;
+    tableHeaders: {
+      month: string;
+      revenue: string;
+      expenses: string;
+      receivables: string;
+      cashFlow: string;
+      defaultRate: string;
+      averageTicket: string;
+      transactions: string;
+    };
+    tableDetailHint: string;
+    exportCsvLabel: string;
+  };
 }
