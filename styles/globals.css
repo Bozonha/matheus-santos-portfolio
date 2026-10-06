@@ -19,7 +19,10 @@ body {
   padding: 0;
   margin: 0;
   max-width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden quebraria position: sticky no header (vira um
+     scroll container proprio); overflow: clip evita o mesmo vazamento
+     horizontal sem esse efeito colateral. */
+  overflow-x: clip;
 }
 
 body {
@@ -40,8 +43,10 @@ body {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
 }

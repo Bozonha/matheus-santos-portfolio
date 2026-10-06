@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/content/dictionaries";
+import { Reveal } from "@/components/motion/Reveal";
 import styles from "./content.module.css";
 
 export function ComoEuTrabalho({
@@ -9,15 +10,15 @@ export function ComoEuTrabalho({
   return (
     <div className={styles.container}>
       <ol className={styles.steps}>
-        {comoEuTrabalho.steps.map((step) => (
-          <li key={step.title} className={styles.step}>
+        {comoEuTrabalho.steps.map((step, index) => (
+          <Reveal as="li" key={step.title} index={index} className={styles.step}>
             <p className={styles.stepTitle}>{step.title}</p>
             <p className={styles.stepBody}>{step.body}</p>
-          </li>
+          </Reveal>
         ))}
       </ol>
 
-      <div className={styles.boundaryBox}>
+      <Reveal as="div" delay={comoEuTrabalho.steps.length * 70} className={styles.boundaryBox}>
         <h2 className={styles.boundaryTitle}>{comoEuTrabalho.aiBoundary.title}</h2>
         <p className={styles.boundaryLede}>{comoEuTrabalho.aiBoundary.lede}</p>
         <ul className={styles.boundaryList}>
@@ -25,7 +26,7 @@ export function ComoEuTrabalho({
             <li key={item}>{item}</li>
           ))}
         </ul>
-      </div>
+      </Reveal>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/content/dictionaries";
+import { Reveal } from "@/components/motion/Reveal";
 import styles from "./content.module.css";
 
 export function Sobre({ sobre }: { sobre: Dictionary["sobre"] }) {
@@ -10,11 +11,11 @@ export function Sobre({ sobre }: { sobre: Dictionary["sobre"] }) {
         ))}
       </div>
       <div className={`${styles.grid}`}>
-        {sobre.focus.map((item) => (
-          <article key={item.title} className={styles.card}>
+        {sobre.focus.map((item, index) => (
+          <Reveal as="article" key={item.title} index={index} className={styles.card}>
             <h2 className={styles.cardTitle}>{item.title}</h2>
             <p className={styles.cardSummary}>{item.body}</p>
-          </article>
+          </Reveal>
         ))}
       </div>
     </div>

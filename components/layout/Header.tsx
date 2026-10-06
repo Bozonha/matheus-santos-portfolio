@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/routes";
 import { pagePaths } from "@/lib/routes";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
+import { HeaderScrollWatcher } from "./HeaderScrollWatcher";
 import styles from "./Header.module.css";
 
 export function Header({
@@ -27,14 +28,15 @@ export function Header({
   ];
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-site-header data-elevated="false">
+      <HeaderScrollWatcher />
       <Link href={`/${locale}/`} className={styles.wordmark}>
         <strong>Matheus Santos</strong>
       </Link>
 
       <nav className={styles.nav} aria-label={dictionary.header.menuLabel}>
         {links.map((link) => (
-          <Link key={link.href} href={link.href}>
+          <Link key={link.href} href={link.href} className={styles.navLink}>
             {link.label}
           </Link>
         ))}
@@ -54,6 +56,7 @@ export function Header({
         <LocaleSwitcher
           currentLocale={locale}
           label={dictionary.header.localeSwitcherLabel}
+          className={styles.localeLink}
         />
         <ThemeToggle
           labelToLight={dictionary.header.themeToggle.toLight}

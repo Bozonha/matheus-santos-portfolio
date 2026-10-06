@@ -103,6 +103,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       className={`${display.variable} ${body.variable} ${mono.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />

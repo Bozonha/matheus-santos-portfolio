@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/content/dictionaries";
 import { Button } from "@/components/ui/Button";
 import { getWhatsappLink, whatsappEnabled } from "@/lib/whatsapp";
+import { Reveal } from "@/components/motion/Reveal";
 import styles from "./content.module.css";
 
 export function ContactCard({ contato }: { contato: Dictionary["contato"] }) {
@@ -11,7 +12,7 @@ export function ContactCard({ contato }: { contato: Dictionary["contato"] }) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.contactCard}>
+      <Reveal as="div" className={styles.contactCard}>
         <p className={styles.contactNote}>{contato.responseNote}</p>
         <Button href={mailHref} variant="primary">
           {contato.emailCta}
@@ -23,7 +24,7 @@ export function ContactCard({ contato }: { contato: Dictionary["contato"] }) {
         ) : (
           <p className={styles.contactNote}>{contato.whatsappNote}</p>
         )}
-      </div>
+      </Reveal>
     </div>
   );
 }

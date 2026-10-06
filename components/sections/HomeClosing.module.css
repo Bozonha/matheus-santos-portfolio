@@ -12,6 +12,6 @@
   margin-bottom: var(--space-8);
 }
 
-.body p:first-child {
+.body > :first-child p {
   color: var(--color-fg);
 }

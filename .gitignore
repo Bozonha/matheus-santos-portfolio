@@ -26,3 +26,10 @@ npm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+.env*
+
+# gerados automaticamente pelo Next.js a cada build (agentRules)
+/AGENTS.md
+/CLAUDE.md

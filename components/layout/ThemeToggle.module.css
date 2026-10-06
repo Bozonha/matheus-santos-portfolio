@@ -8,6 +8,16 @@
   border-radius: var(--radius-md);
   background: var(--color-bg-raised);
   cursor: pointer;
+  transition: border-color var(--motion-fast) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-standard);
+}
+
+.toggle:hover {
+  border-color: var(--color-accent);
+}
+
+.toggle:active {
+  transform: scale(0.94);
 }
 
 .icon {
@@ -18,4 +28,22 @@
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: transform var(--motion-base) var(--ease-standard);
+}
+
+.toggle:hover .icon {
+  transform: rotate(14deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle,
+  .icon {
+    transition: none;
+  }
+  .toggle:active {
+    transform: none;
+  }
+  .toggle:hover .icon {
+    transform: none;
+  }
 }

@@ -3,30 +3,60 @@
   gap: var(--space-8);
 }
 
+.eyebrow,
+.title,
+.lede,
+.ctas {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: hero-in var(--motion-slow) var(--ease-standard) forwards;
+}
+
 .eyebrow {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   color: var(--color-accent);
+  animation-delay: 60ms;
 }
 
 .title {
   font-size: var(--text-3xl);
   max-width: 18ch;
+  animation-delay: 150ms;
 }
 
 .lede {
   font-size: var(--text-lg);
   color: var(--color-fg-muted);
+  animation-delay: 260ms;
 }
 
 .ctas {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-4);
+  animation-delay: 360ms;
 }
 
 .previewWrap {
   margin-top: var(--space-4);
+}
+
+@keyframes hero-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eyebrow,
+  .title,
+  .lede,
+  .ctas {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (min-width: 1024px) {

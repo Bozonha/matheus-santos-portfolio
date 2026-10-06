@@ -4,9 +4,34 @@
   background: var(--color-bg);
   color: var(--color-fg);
   overflow: hidden;
+  transition: background-color var(--motion-narrative) var(--ease-standard);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 82% 0%,
+    color-mix(in srgb, var(--color-accent) 16%, transparent),
+    transparent 55%
+  );
+  opacity: 0.6;
+  transition: background var(--motion-narrative) var(--ease-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section,
+  .section::before {
+    transition: none;
+  }
 }
 
 .grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
