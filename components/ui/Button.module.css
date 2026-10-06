@@ -3,22 +3,33 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-md);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--notch)) 0,
+    100% var(--notch),
+    100% 100%,
+    0 100%
+  );
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   text-decoration: none;
   border: 1px solid transparent;
   transition: transform var(--motion-fast) var(--ease-standard),
-    border-color var(--motion-fast) var(--ease-standard);
+    border-color var(--motion-fast) var(--ease-standard),
+    background-color var(--motion-fast) var(--ease-standard);
 }
 
-.button:hover {
-  transform: translateY(-1px);
+.button:active {
+  transform: translateY(1px);
 }
 
 .primary {
   background: var(--color-accent);
   color: var(--color-accent-ink);
+}
+
+.primary:hover {
+  background: color-mix(in srgb, var(--color-accent) 88%, black);
 }
 
 .secondary {
@@ -29,10 +40,11 @@
 
 .secondary:hover {
   border-color: var(--color-accent);
+  color: var(--color-accent-text, var(--color-accent));
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .button:hover {
+  .button:active {
     transform: none;
   }
 }

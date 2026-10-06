@@ -10,11 +10,16 @@ export function Sobre({ sobre }: { sobre: Dictionary["sobre"] }) {
           <p key={paragraph}>{paragraph}</p>
         ))}
       </div>
-      <div className={`${styles.grid}`}>
+      <div className={styles.focusList}>
         {sobre.focus.map((item, index) => (
-          <Reveal as="article" key={item.title} index={index} className={styles.card}>
-            <h2 className={styles.cardTitle}>{item.title}</h2>
-            <p className={styles.cardSummary}>{item.body}</p>
+          <Reveal as="article" key={item.title} index={index} className={styles.focusItem}>
+            <span className={styles.focusIndex} aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <div className={styles.focusBody}>
+              <h2 className={styles.focusTitle}>{item.title}</h2>
+              <p>{item.body}</p>
+            </div>
           </Reveal>
         ))}
       </div>

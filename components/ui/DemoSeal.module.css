@@ -1,16 +1,28 @@
+/*
+  Selo "Demonstracao" — pensado como um carimbo de registro, nao um chip de
+  status. Dois cantos cortados (nao arredondados), levemente rotacionado,
+  como um talao batido na hora. Ver DESIGN.md secao 7.
+*/
 .seal {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
-  padding: var(--space-1) var(--space-2);
+  padding: var(--space-1) var(--space-3);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-fg-muted);
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  color: var(--color-accent-text, var(--color-accent));
+  background: var(--color-bg-raised);
+  border: 1px solid currentColor;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--notch-sm)) 0,
+    100% var(--notch-sm),
+    100% 100%,
+    var(--notch-sm) 100%,
+    0 calc(100% - var(--notch-sm))
+  );
+  transform: rotate(-1.5deg);
   z-index: 2;
 }
 
@@ -19,12 +31,4 @@
   top: var(--space-3);
   right: var(--space-3);
   z-index: 2;
-}
-
-.dot {
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 50%;
-  background: var(--color-accent);
-  flex-shrink: 0;
 }

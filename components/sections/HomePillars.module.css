@@ -17,7 +17,13 @@
 .card {
   padding: var(--space-6);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--notch)) 0,
+    100% var(--notch),
+    100% 100%,
+    0 100%
+  );
   display: grid;
   gap: var(--space-3);
   align-content: start;

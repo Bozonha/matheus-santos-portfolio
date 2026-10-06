@@ -15,7 +15,6 @@ export function DemoSeal({
 }) {
   return (
     <span className={`${styles.seal} ${variant === "corner" ? styles.corner : ""}`}>
-      <span className={styles.dot} aria-hidden="true" />
       {label}
     </span>
   );

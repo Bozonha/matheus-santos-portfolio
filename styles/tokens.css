@@ -3,6 +3,11 @@
   data-theme controla o repouso do site inteiro (dark ~ noite, light ~ dia).
   data-phase so atua dentro do container de scroll narrativo da Home,
   e vence localmente sobre data-theme la dentro.
+
+  Acento: laranja-ferrugem (~24deg), mais escuro e saturado que um
+  "laranja SaaS" pastel — pensado para lembrar luz de poste de sodio/letreiro
+  "aberto" visto de madrugada, nao um gradiente de produto. Contraste
+  verificado por calculo de luminancia relativa (WCAG), nao por olho.
 */
 
 :root {
@@ -11,11 +16,11 @@
   --color-fg: #e9edf5;
   --color-fg-muted: #a8b3c7;
   --color-border: #1f2b42;
-  --color-accent: #f2994a;
-  --color-accent-text: #f2994a;
+  --color-accent: #d06e24;
+  --color-accent-text: #d06e24;
   --color-accent-ink: #14181f;
   --color-alert: #e0555a;
-  --color-focus-ring: #f2994a;
+  --color-focus-ring: #d06e24;
 
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
@@ -42,6 +47,10 @@
 
   --radius-sm: 4px;
   --radius-md: 8px;
+  /* corte de canto — a assinatura geometrica do site (recibo/ficha/talao),
+     usada no lugar de cantos arredondados em botoes e no selo. */
+  --notch: 9px;
+  --notch-sm: 6px;
 
   --motion-fast: 120ms;
   --motion-base: 240ms;
@@ -59,11 +68,11 @@
   --color-fg: #14181f;
   --color-fg-muted: #4b5563;
   --color-border: #d7dae0;
-  --color-accent: #f2994a;
-  --color-accent-text: #c96a1e;
+  --color-accent: #d06e24;
+  --color-accent-text: #984715;
   --color-accent-ink: #14181f;
   --color-alert: #c23b40;
-  --color-focus-ring: #c96a1e;
+  --color-focus-ring: #984715;
   color-scheme: light;
 }
 
@@ -74,11 +83,11 @@
     --color-fg: #14181f;
     --color-fg-muted: #4b5563;
     --color-border: #d7dae0;
-    --color-accent: #f2994a;
-    --color-accent-text: #c96a1e;
+    --color-accent: #d06e24;
+    --color-accent-text: #984715;
     --color-accent-ink: #14181f;
     --color-alert: #c23b40;
-    --color-focus-ring: #c96a1e;
+    --color-focus-ring: #984715;
     color-scheme: light;
   }
 }
@@ -95,8 +104,8 @@
   --color-fg: #e9edf5;
   --color-fg-muted: #a8b3c7;
   --color-border: #1f2b42;
-  --color-accent: #f2994a;
-  --color-focus-ring: #f2994a;
+  --color-accent: #d06e24;
+  --color-focus-ring: #d06e24;
   color-scheme: dark;
 }
 
@@ -106,8 +115,8 @@
   --color-fg: #edeff5;
   --color-fg-muted: #b7bed1;
   --color-border: #3c4a68;
-  --color-accent: #f5a45f;
-  --color-focus-ring: #f5a45f;
+  --color-accent: #e08a4c;
+  --color-focus-ring: #e08a4c;
   color-scheme: dark;
 }
 
@@ -117,8 +126,8 @@
   --color-fg: #14181f;
   --color-fg-muted: #4b5563;
   --color-border: #d7dae0;
-  --color-accent: #f2994a;
-  --color-focus-ring: #c96a1e;
+  --color-accent: #d06e24;
+  --color-focus-ring: #984715;
   color-scheme: light;
 }
 
